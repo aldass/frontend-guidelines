@@ -4,7 +4,7 @@
 
 ### Semantics
 
-HTML5 provides us with lots of semantic elements aimed to describe precisely the content. Make sure you benefit from its rich vocabulary.
+`HTML5` provides us with lots of semantic elements aimed to describe precisely the content. Make sure you benefit from its rich vocabulary.
 
 ```html
 <!-- bad -->
@@ -49,7 +49,7 @@ element in a wrong way than staying neutral.
 
 ### Brevity
 
-Keep your code terse. Forget about your old XHTML habits.
+Keep your code terse. Forget about your old `XHTML` habits.
 
 ```html
 <!-- bad -->
@@ -101,7 +101,7 @@ website, you can start immediately by fixing the little things that make a huge 
 ### Language
 
 While defining the language and character encoding is optional, it's recommended to always declare
-both at document level, even if they're specified in your HTTP headers. Favor UTF-8 over any other
+both at document level, even if they're specified in your `HTTP` headers. Favor `UTF-8` over any other
 character encoding.
 
 ```html
@@ -122,7 +122,7 @@ character encoding.
 Unless there's a valid reason for loading your scripts before your content, don't block the
 rendering of your page. If your style sheet is heavy, isolate the styles that are absolutely
 required initially and defer the loading of the secondary declarations in a separate style sheet.
-Two HTTP requests is significantly slower than one, but the perception of speed is the most
+Two `HTTP` requests is significantly slower than one, but the perception of speed is the most
 important factor.
 
 ```html
@@ -145,7 +145,7 @@ important factor.
 
 ### Semicolons
 
-While the semicolon is technically a separator in CSS, always treat it as a terminator.
+While the semicolon (`;`) is technically a separator in `CSS`, always treat it as a terminator.
 
 ```css
 /* bad */
@@ -213,8 +213,8 @@ div {
 
 ### Positioning
 
-There are many ways to position elements in CSS but try to restrict yourself to the
-properties/values below. By order of preference:
+There are many ways to position elements in `CSS` but try to restrict yourself to the
+`properties: values` below. By order of preference:
 
 ```
 display: block;
@@ -227,7 +227,7 @@ position: fixed;
 
 ### Selectors
 
-Minimize selectors tightly coupled to the DOM. Consider adding a class to the elements
+Minimize selectors tightly coupled to the `DOM`. Consider adding a class to the elements
 you want to match when your selector exceeds 3 structural pseudo-classes, descendant or
 sibling combinators.
 
@@ -338,7 +338,7 @@ div {
 
 ### Language
 
-Prefer English over math.
+Prefer English over math (but, ONLY where it makes common sense).
 
 ```css
 /* bad */
@@ -354,7 +354,7 @@ Prefer English over math.
 
 ### Vendor prefixes
 
-Kill obsolete vendor prefixes aggressively. If you need to use them, insert them before the
+Kill obsolete vendor prefixes (i.e. `-webkit-*`, `-moz-*`, `-ms-*`) aggressively. If you need to use them, insert them before the
 standard property.
 
 ```css
@@ -403,14 +403,14 @@ div:hover {
 
 ### Units
 
-Use unitless values when you can. Favor pixels over relative units and seconds over
+Use relative unit values when you can. Favor relative units over pixels and seconds over
 milliseconds.
 
 ```css
 /* bad */
 div {
   margin: 0px;
-  font-size: 0.9rem;
+  font-size: 15px;
   line-height: 22px;
   transition: 500ms;
 }
@@ -418,7 +418,7 @@ div {
 /* good */
 div {
   margin: 0;
-  font-size: 15px;
+  font-size: 0.9rem;
   line-height: 1.5;
   transition: .5s;
 }
@@ -442,7 +442,7 @@ div {
 
 ### Drawing
 
-Avoid HTTP requests when the resources are easily replicable with CSS.
+Avoid `HTTP` requests when the resources are easily replicable with `CSS`.
 
 ```css
 /* bad */
@@ -484,7 +484,7 @@ div {
 ### Performance
 
 Favor readability, correctness and expressiveness over performance. JavaScript will basically never
-be your performance bottleneck. Optimize things like image compression, network access and DOM
+be your performance bottleneck. Optimize things like image compression, network access and `DOM`
 reflows instead. If you remember just one guideline from this document, choose this one.
 
 ```javascript
@@ -570,6 +570,7 @@ const sum = arr =>
 
 sum([1, 2, 3]); // => 6
 ```
+
 If you can't, or if using `array.prototype` methods is arguably abusive, use recursion.
 
 ```javascript
@@ -615,7 +616,7 @@ const sortNumbers = (...numbers) => numbers.sort();
 
 ### Apply
 
-Forget about `apply()`. Use the spread operator instead.
+Forget about `apply()`. Use the spread operator (`...`) instead.
 
 ```javascript
 const greet = (first, last) => `Hi ${first} ${last}`;
@@ -736,7 +737,7 @@ const obj = {
 
 ### Conditions
 
-Favor IIFE's and return statements over if, else if, else and switch statements.
+Favor IIFE's and `return` statements over `if`, `else if`, `else` and `switch` statements.
 
 ```javascript
 // bad
@@ -760,7 +761,7 @@ const grade = (() => {
 
 ### Object iteration
 
-Avoid `for...in` when you can.
+Avoid `for...in` when you can ([see here for why](https://stackoverflow.com/a/500531))
 
 ```javascript
 const shared = { foo: "foo" };
