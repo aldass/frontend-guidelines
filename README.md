@@ -30,8 +30,7 @@
 </main>
 ```
 
-Make sure you understand the semantic of the elements you're using. It's worse to use a semantic
-element in a wrong way than staying neutral.
+Make sure you understand the semantic of the elements you're using. It's worse to use a semantic element in a wrong way than staying neutral.
 
 ```html
 <!-- bad -->
@@ -82,8 +81,7 @@ Keep your code terse. Forget about your old `XHTML` habits.
 
 ### Accessibility
 
-Accessibility shouldn't be an afterthought. You don't have to be a WCAG expert to improve your
-website, you can start immediately by fixing the little things that make a huge difference, such as:
+Accessibility shouldn't be an afterthought. You don't have to be a WCAG expert to improve your website, you can start immediately by fixing the little things that make a huge difference, such as:
 
 * learning to use the `alt` attribute properly
 * making sure your links and buttons are marked as such (no `<div class=button>` atrocities)
@@ -100,9 +98,7 @@ website, you can start immediately by fixing the little things that make a huge 
 
 ### Language
 
-While defining the language and character encoding is optional, it's recommended to always declare
-both at document level, even if they're specified in your `HTTP` headers. Favor `UTF-8` over any other
-character encoding.
+While defining the language and character encoding is optional, it's recommended to always declare both at document level, even if they're specified in your `HTTP` headers. Favor `UTF-8` over any other character encoding.
 
 ```html
 <!-- bad -->
@@ -119,11 +115,7 @@ character encoding.
 
 ### Performance
 
-Unless there's a valid reason for loading your scripts before your content, don't block the
-rendering of your page. If your style sheet is heavy, isolate the styles that are absolutely
-required initially and defer the loading of the secondary declarations in a separate style sheet.
-Two `HTTP` requests is significantly slower than one, but the perception of speed is the most
-important factor.
+Unless there's a valid reason for loading your scripts before your content, don't block the rendering of your page. If your style sheet is heavy, isolate the styles that are absolutely required initially and defer the loading of the secondary declarations in a separate style sheet. Two `HTTP` requests is significantly slower than one, but the perception of speed is the most important factor.
 
 ```html
 <!-- bad -->
@@ -178,9 +170,7 @@ div {
 
 ### Flow
 
-Don't change the default behavior of an element if you can avoid it. Keep elements in the
-natural document flow as much as you can. For example, removing the white-space below an
-image shouldn't make you change its default display:
+Don't change the default behavior of an element if you can avoid it. Keep elements in the natural document flow as much as you can. For example, removing the white-space below an image shouldn't make you change its default display:
 
 ```css
 /* bad */
@@ -213,8 +203,7 @@ div {
 
 ### Positioning
 
-There are many ways to position elements in `CSS` but try to restrict yourself to the
-`properties: values` below. By order of preference:
+There are many ways to position elements in `CSS` but try to restrict yourself to the `properties: values` below. By order of preference:
 
 ```
 display: block;
@@ -227,9 +216,7 @@ position: fixed;
 
 ### Selectors
 
-Minimize selectors tightly coupled to the `DOM`. Consider adding a class to the elements
-you want to match when your selector exceeds 3 structural pseudo-classes, descendant or
-sibling combinators.
+Minimize selectors tightly coupled to the `DOM`. Consider adding a class to the elements you want to match when your selector exceeds 3 structural pseudo-classes, descendant or sibling combinators.
 
 ```css
 /* bad */
@@ -255,8 +242,7 @@ img[src$=svg], ul > li:first-child {
 
 ### Specificity
 
-Don't make values and selectors hard to override. Minimize the use of `id`'s
-and avoid `!important`.
+Don't make values and selectors hard to override. Minimize the use of `id`'s and avoid `!important`.
 
 ```css
 /* bad */
@@ -313,8 +299,7 @@ div {
 
 ### Brevity
 
-Keep your code terse. Use shorthand properties and avoid using multiple properties when
-it's not needed.
+Keep your code terse. Use shorthand properties and avoid using multiple properties when it's not needed.
 
 ```css
 /* bad */
@@ -380,8 +365,7 @@ div {
 
 ### Animations
 
-Favor transitions over animations. Avoid animating other properties than
-`opacity` and `transform`.
+Favor transitions over animations. Avoid animating other properties than `opacity` and `transform`.
 
 ```css
 /* bad */
@@ -403,8 +387,7 @@ div:hover {
 
 ### Units
 
-Use relative unit values when you can. Favor relative units over pixels and seconds over
-milliseconds.
+Use relative unit values when you can. Favor relative units over pixels and seconds over milliseconds.
 
 ```css
 /* bad */
@@ -483,9 +466,7 @@ div {
 
 ### Performance
 
-Favor readability, correctness and expressiveness over performance. JavaScript will basically never
-be your performance bottleneck. Optimize things like image compression, network access and `DOM`
-reflows instead. If you remember just one guideline from this document, choose this one.
+Favor readability, correctness and expressiveness over performance. JavaScript will basically never be your performance bottleneck. Optimize things like image compression, network access and `DOM` re-flows instead. If you remember just one guideline from this document, choose this one.
 
 ```javascript
 // bad (albeit way faster)
@@ -603,7 +584,7 @@ createDivs(5);
 Forget about the `arguments` object. The rest parameter is always a better option because:
 
 1. it's named, so it gives you a better idea of the arguments the function is expecting
-2. it's a real array, which makes it easier to use.
+1. it's a real array, which makes it easier to use.
 
 ```javascript
 // bad
@@ -784,8 +765,7 @@ Object.keys(obj).forEach(prop => console.log(prop));
 
 ### Objects as Maps
 
-While objects have legitimate use cases, maps are usually a better, more powerful choice. When in
-doubt, use a `Map`.
+While objects have legitimate use cases, maps are usually a better, more powerful choice. When in doubt, use a `Map`.
 
 ```javascript
 // bad
